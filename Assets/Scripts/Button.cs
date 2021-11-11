@@ -9,6 +9,8 @@ public class Button : MonoBehaviour
     {
         SceneManager.LoadScene("BeginingRoom");
     }
+    //Hello
+
 
     public void OnQuit()
     {

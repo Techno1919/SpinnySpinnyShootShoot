@@ -16591,7 +16591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2852464271484641140, guid: 1bfc2f8199197a446aea0546610b084e, type: 3}
       propertyPath: m_Name
-      value: Wizard
+      value: Wizard1
       objectReference: {fileID: 0}
     - target: {fileID: 3777864959710262804, guid: 1bfc2f8199197a446aea0546610b084e, type: 3}
       propertyPath: shot

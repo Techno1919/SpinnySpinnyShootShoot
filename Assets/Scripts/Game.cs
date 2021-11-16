@@ -14,6 +14,7 @@ public class Game : MonoBehaviour
     public GameObject youWin;
     public GameObject youLose;
     public GameObject playAgain;
+    public PlayerShot fireball;
 
     static Game instance;
     static public Game Instance
@@ -32,6 +33,11 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
+        fireball.speed = 7;
+        fireball.damage = 25;
+        fireball.lifetime = 5;
+        fireball.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+
         youWin.SetActive(false);
         youLose.SetActive(false);
         playAgain.SetActive(false);

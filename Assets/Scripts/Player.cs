@@ -62,7 +62,21 @@ public class Player : MonoBehaviour
        if(shotTimer <= 0)
        {
            shotTimer = .5f;
-           Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
+           if(weapon.isShotgun)
+           {
+                PlayerShot spawnedShot = Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
+                spawnedShot.test = weapon.transform.up;
+                spawnedShot = Instantiate(shot, weapon.shootPoint2.transform.position, Quaternion.identity);
+                spawnedShot.test = weapon.transform.up;
+                spawnedShot = Instantiate(shot, weapon.shootPoint3.transform.position, Quaternion.identity);
+                spawnedShot.test = weapon.transform.up;
+            }
+           else
+           {
+                PlayerShot spawnedShot = Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
+                spawnedShot.test = weapon.transform.up;
+            }
+           
        }
     }
 

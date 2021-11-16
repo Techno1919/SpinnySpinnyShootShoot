@@ -5,6 +5,10 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public GameObject shootPoint;
+    public GameObject shootPoint2;
+    public GameObject shootPoint3;
+    public bool isShotgun;
+    
 
     public void Rotate(Vector2 input)
     {

@@ -7,15 +7,18 @@ public class PlayerShot : MonoBehaviour
     public float speed = 2;
     public float lifetime = 1;
     public float damage = 5;
+    public Rigidbody2D rb;
+    public Vector2 test;
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, lifetime);
     }
 
     void Update()
     {
-        transform.Translate(Player.Instance.weapon.transform.up * speed * Time.deltaTime);
+        transform.Translate(test * speed * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

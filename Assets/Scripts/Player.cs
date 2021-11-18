@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public bool powerActive;
+    public bool invincible;
+    public float timeRemaining;
+
     #region Variables
     public float speed = 2;
     public PlayerShot shot;
@@ -108,17 +112,25 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.tag == "EnemyShot")
         {
-            if(halfHeartLeft)
+            if(invincible)
             {
-                health[index].sprite = emptyHeart;
-                halfHeartLeft = false;
-                index++;
+            
             }
             else
             {
-                health[index].sprite = halfHeart;
-                halfHeartLeft = true;
+                if (halfHeartLeft)
+                {
+                    health[index].sprite = emptyHeart;
+                    halfHeartLeft = false;
+                    index++;
+                }
+                else
+                {
+                    health[index].sprite = halfHeart;
+                    halfHeartLeft = true;
+                }
             }
+
         }
     }
 }

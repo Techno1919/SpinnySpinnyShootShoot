@@ -121,6 +121,8 @@ MonoBehaviour:
   speed: 7
   lifetime: 5
   damage: 25
+  rb: {fileID: 0}
+  test: {x: 0, y: 0}
 --- !u!61 &6577127196275205517
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -62,20 +62,31 @@ public class Player : MonoBehaviour
        if(shotTimer <= 0)
        {
            shotTimer = .5f;
-           if(weapon.isShotgun)
+           switch (weapon.weaponType)
            {
-                PlayerShot spawnedShot = Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
-                spawnedShot.test = weapon.transform.up;
-                spawnedShot = Instantiate(shot, weapon.shootPoint2.transform.position, Quaternion.identity);
-                spawnedShot.test = weapon.transform.up;
-                spawnedShot = Instantiate(shot, weapon.shootPoint3.transform.position, Quaternion.identity);
-                spawnedShot.test = weapon.transform.up;
-            }
-           else
-           {
-                PlayerShot spawnedShot = Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
-                spawnedShot.test = weapon.transform.up;
-            }
+               case WeaponType.Staff:
+                   PlayerShot spawnedShot = Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
+                   spawnedShot.test = weapon.transform.up;
+                   break;
+               case WeaponType.Shotgun:
+                   spawnedShot = Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
+                   spawnedShot.test = weapon.transform.up;
+                   spawnedShot = Instantiate(shot, weapon.shootPoint2.transform.position, Quaternion.identity);
+                   spawnedShot.test = weapon.transform.up;
+                   spawnedShot = Instantiate(shot, weapon.shootPoint3.transform.position, Quaternion.identity);
+                   spawnedShot.test = weapon.transform.up;
+                   break;
+               case WeaponType.Pistol:
+                   spawnedShot = Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
+                   spawnedShot.test = weapon.transform.up;
+                   break;
+               case WeaponType.Sword:
+                    weapon.rotateAttack = true;
+                    weapon.tag = "Shot";
+                   break;
+               default:
+                   break;
+           }
            
        }
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Powerup : MonoBehaviour
 {
+    public float timeRemaining;
 
 
     public Player wimzard;
@@ -13,6 +14,29 @@ public class Powerup : MonoBehaviour
     int scaleZ = 2;
 
     public string powerupName;
+
+    private void Update()
+    {
+        if(wimzard.powerActive)
+        {
+            if (wimzard.timeRemaining > 0)
+            {
+                //timeRemaining -= Time.deltaTime;
+                wimzard.timeRemaining -= Time.deltaTime;
+            }
+            else if (wimzard.timeRemaining < 0)
+            {
+                wimzard.timeRemaining = 0;
+                wimzard.shot.speed = 7;
+                wimzard.shotTimer = 0.5f;
+                wimzard.shot.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+                wimzard.invincible = false;
+                wimzard.powerActive = false;
+
+            }
+        }
+        
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,21 +49,35 @@ public class Powerup : MonoBehaviour
             switch (powerupName)
             {
                 case "FastFire":
+                    wimzard.powerActive = true;
                     wimzard.shotTimer = 0.1f;
                     wimzard.shot.speed = 100;
+                    wimzard.timeRemaining = 5;
+                    timeRemaining = 5;
+                    
                     break;
                 case "BiggerBullet":
-                   
-                    //fireball.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+                    wimzard.powerActive = true;
                     wimzard.shot.transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
+                    timeRemaining = 6;
+                    wimzard.timeRemaining = 6;
+                    
                     break;
                 case "MarioStarRipoff":
+                    wimzard.powerActive = true;
+                    wimzard.invincible = true;
+                    wimzard.timeRemaining = 10;
+                    
+                    timeRemaining = 10;
                     break;
+                   
             }
             Debug.Log("Pickup");
             Destroy(gameObject);
         }
     }
+
+   
        
 
 }

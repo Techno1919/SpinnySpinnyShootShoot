@@ -123,11 +123,7 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.tag == "EnemyShot")
         {
-            if(invincible)
-            {
-            
-            }
-            else
+            if(!invincible)
             {
                 if (halfHeartLeft)
                 {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -58,6 +59,7 @@ public class Player : MonoBehaviour
         //input = gamepad.leftStick.ReadValue();
         if (shotTimer <= .5f) shotTimer -= Time.deltaTime;
         if (gamepad.buttonSouth.wasPressedThisFrame) OnFire();
+        if (gamepad.buttonEast.wasPressedThisFrame) SceneManager.LoadScene("Test");
 
     }
 

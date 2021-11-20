@@ -40,9 +40,35 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag == "Shot")
         {
-            HP -= Player.Instance.shot.damage;
+            HP -= Player.Instance.weapon.damage;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.tag == "Shot")
+        {
+            HP -= Player.Instance.weapon.damage;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Shot")
+        {
+            HP -= Player.Instance.weapon.damage;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Shot")
+        {
+            HP -= Player.Instance.weapon.damage;
         }
     }
 }

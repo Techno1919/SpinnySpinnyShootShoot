@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4141094002696822642
 Transform:
   m_ObjectHideFlags: 0
@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4141094002696822643}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.13, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 4141094002367507172}
@@ -132,6 +132,9 @@ MonoBehaviour:
   shootPoint2: {fileID: 4141094003427120155}
   shootPoint3: {fileID: 4141094003297342983}
   weaponType: 0
+  rotateAttack: 0
+  originalRotation: {x: 0, y: 0, z: 0, w: 0}
+  damage: 200
 --- !u!1 &4141094003297342983
 GameObject:
   m_ObjectHideFlags: 0

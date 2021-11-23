@@ -16,6 +16,7 @@ public class Game : MonoBehaviour
     public GameObject playAgain;
     public PlayerShot fireball;
     public Player player;
+    public bool startGame = false;
 
     public Powerup fastFire;
     public Powerup biggerBullet;
@@ -46,10 +47,20 @@ public class Game : MonoBehaviour
         youWin.SetActive(false);
         youLose.SetActive(false);
         playAgain.SetActive(false);
+        Time.timeScale = 0;
     }
 
     void Update()
     {
+        if (startGame)
+        {
+            Time.timeScale = 1;
+        }
+        else
+        {
+            return;
+        }
+
         scoreText.text = $"Score: {score}";
 
         enemies = FindObjectsOfType<Enemy>();

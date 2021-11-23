@@ -15,6 +15,11 @@ public class Game : MonoBehaviour
     public GameObject youLose;
     public GameObject playAgain;
     public PlayerShot fireball;
+    public Player player;
+
+    public Powerup fastFire;
+    public Powerup biggerBullet;
+    public Powerup marioStarRipoff;
 
     static Game instance;
     static public Game Instance

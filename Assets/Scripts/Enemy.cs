@@ -32,6 +32,23 @@ public class Enemy : MonoBehaviour
 
         if(HP <= 0)
         {
+            System.Random rnd = new System.Random();
+            int itemDropRate = rnd.Next(0, 50);
+            if(itemDropRate > 25 && itemDropRate <= 35)
+            {
+                Powerup powerup = Instantiate(Game.Instance.biggerBullet);
+                powerup.wimzard = Game.Instance.player;
+            }
+            else if(itemDropRate > 35 && itemDropRate <= 45)
+            {
+                Powerup powerup = Instantiate(Game.Instance.fastFire);
+                powerup.wimzard = Game.Instance.player;
+            }
+            else if(itemDropRate > 45 && itemDropRate <= 50)
+            {
+                Powerup powerup = Instantiate(Game.Instance.marioStarRipoff);
+                powerup.wimzard = Game.Instance.player;
+            }
             Game.Instance.score += 10;
             Destroy(gameObject);
         }

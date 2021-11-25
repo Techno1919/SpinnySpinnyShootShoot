@@ -38,16 +38,19 @@ public class Enemy : MonoBehaviour
             {
                 Powerup powerup = Instantiate(Game.Instance.biggerBullet);
                 powerup.wimzard = Game.Instance.player;
+                powerup.transform.localPosition = transform.localPosition;
             }
             else if(itemDropRate > 35 && itemDropRate <= 45)
             {
                 Powerup powerup = Instantiate(Game.Instance.fastFire);
                 powerup.wimzard = Game.Instance.player;
+                powerup.transform.localPosition = transform.localPosition;
             }
             else if(itemDropRate > 45 && itemDropRate <= 50)
             {
                 Powerup powerup = Instantiate(Game.Instance.marioStarRipoff);
                 powerup.wimzard = Game.Instance.player;
+                powerup.transform.localPosition = transform.localPosition;
             }
             Game.Instance.score += 10;
             Destroy(gameObject);

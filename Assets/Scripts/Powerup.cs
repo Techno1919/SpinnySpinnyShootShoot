@@ -13,7 +13,16 @@ public class Powerup : MonoBehaviour
     int scaleY = 2;
     int scaleZ = 2;
 
+    public AudioSource pickUpNoise;
+    public AudioSource powerDown;
+
     public string powerupName;
+
+
+    public void Start()
+    {
+        wimzard = FindObjectOfType<Player>();
+    }
 
     private void Update()
     {
@@ -26,13 +35,14 @@ public class Powerup : MonoBehaviour
             }
             else if (wimzard.timeRemaining < 0)
             {
+                powerDown.Play();
                 wimzard.timeRemaining = 0;
                 wimzard.shot.speed = 7;
                 wimzard.shotTimer = 0.5f;
                 wimzard.shot.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
                 wimzard.invincible = false;
                 wimzard.powerActive = false;
-
+                 
             }
         }
         
@@ -42,6 +52,7 @@ public class Powerup : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
+            
             wimzard.shot.speed = 7;
             wimzard.shot.damage = 25;
             wimzard.shot.lifetime = 5;
@@ -49,6 +60,7 @@ public class Powerup : MonoBehaviour
             switch (powerupName)
             {
                 case "FastFire":
+                    pickUpNoise.Play();
                     wimzard.powerActive = true;
                     wimzard.shotTimer = 0.1f;
                     wimzard.shot.speed = 100;
@@ -57,6 +69,7 @@ public class Powerup : MonoBehaviour
                     
                     break;
                 case "BiggerBullet":
+                    pickUpNoise.Play();
                     wimzard.powerActive = true;
                     wimzard.shot.transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
                     timeRemaining = 6;
@@ -64,6 +77,7 @@ public class Powerup : MonoBehaviour
                     
                     break;
                 case "MarioStarRipoff":
+                    pickUpNoise.Play();
                     wimzard.powerActive = true;
                     wimzard.invincible = true;
                     wimzard.timeRemaining = 10;
@@ -76,6 +90,7 @@ public class Powerup : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 
    
        

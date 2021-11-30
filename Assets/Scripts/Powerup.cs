@@ -36,7 +36,7 @@ public class Powerup : MonoBehaviour
             {
                 powerDown.Play();
                 wimzard.timeRemaining = 0;
-                wimzard.shot.speed = 7;
+                wimzard.shot.speed = 10;
                 wimzard.shotTimer = 0.5f;
                 wimzard.shot.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
                 wimzard.invincible = false;
@@ -52,7 +52,7 @@ public class Powerup : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
 
-            wimzard.shot.speed = 7;
+            wimzard.shot.speed = 10;
             wimzard.shot.damage = 25;
             wimzard.shot.lifetime = 5;
             wimzard.particleSystem.Play();
@@ -62,7 +62,7 @@ public class Powerup : MonoBehaviour
                 case "FastFire":
                     wimzard.powerActive = true;
                     wimzard.shotTimer = 0.1f;
-                    wimzard.shot.speed = 100;
+                    wimzard.shot.speed = 30;
                     wimzard.timeRemaining = 5;
                     timeRemaining = 5;
 

@@ -7,12 +7,19 @@ public class Enemy : MonoBehaviour
     public float maxHP = 25;
     public float shootTimer = 5;
     public EnemyShot shot;
-    public float speed = 2;
+    public float speed = 5;
     public float moveTimer = 3;
 
     //public 
 
     float HP;
+
+    //You may consider adding a rigid body to the zombie for accurate physics simulation
+    public GameObject wayPoint;
+    public  Vector2 wayPointPos;
+    //This will be the zombie's speed. Adjust as necessary.
+    public float enemyspeed = 6.0f;
+
 
     void Start()
     {
@@ -21,6 +28,13 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if(Time.timeScale != 0)
+        {
+            wayPointPos = new Vector2(wayPoint.transform.position.x, wayPoint.transform.position.y);
+            //Here, the zombie's will follow the waypoint.
+            transform.position = Vector2.MoveTowards(transform.position, wayPointPos, enemyspeed * Time.deltaTime);
+        }
+
 
         shootTimer -= Time.deltaTime;
 
@@ -91,4 +105,6 @@ public class Enemy : MonoBehaviour
             HP -= Player.Instance.weapon.damage;
         }
     }
+
+
 }

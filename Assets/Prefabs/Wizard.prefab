@@ -99,7 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41af93b40f949a84796f891eaa0d472e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  powerActive: 0
+  invincible: 0
+  timeRemaining: 0
+  speed: 5
   shot: {fileID: 4756264010965585642, guid: 4ae153dca53818f4f841a23b7df2ada8, type: 3}
   weapon: {fileID: 0}
   shotTimer: 0

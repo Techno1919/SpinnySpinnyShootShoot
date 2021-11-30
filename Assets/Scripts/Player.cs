@@ -12,6 +12,10 @@ public class Player : MonoBehaviour
     public float timeRemaining;
     public ParticleSystem particleSystem;
 
+    public GameObject wayPoint;
+    //This is how often your waypoint's position will update to the player's position
+    private float followtimer = 0.5f;
+
     #region Variables
     public float speed = 2;
     public PlayerShot shot;
@@ -47,6 +51,18 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+
+        if (followtimer > 0)
+        {
+            followtimer -= Time.deltaTime;
+        }
+        if (followtimer <= 0)
+        {
+            //The position of the waypoint will update to the player's position
+            UpdatePosition();
+            followtimer = 0.5f;
+        }
+
         Gamepad gamepad = Gamepad.current;
 
         transform.Translate(input * speed * Time.deltaTime);
@@ -62,6 +78,14 @@ public class Player : MonoBehaviour
         if (gamepad.buttonSouth.wasPressedThisFrame) OnFire();
         if (gamepad.buttonEast.wasPressedThisFrame) SceneManager.LoadScene("Test");
 
+    }
+
+
+
+    void UpdatePosition()
+    {
+        //The wayPoint's position will now be the player's current position.
+        wayPoint.transform.position = transform.position;
     }
 
     public void OnFire()

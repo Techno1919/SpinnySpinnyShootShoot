@@ -150,6 +150,9 @@ MonoBehaviour:
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
+  wayPoint: {fileID: 1422063936}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 6
 --- !u!61 &22210887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -191,7 +194,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -341,6 +344,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster_8_Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 1418375445147742, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4024533478750098, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -445,7 +452,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -468,6 +475,9 @@ MonoBehaviour:
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
+  wayPoint: {fileID: 1422063936}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 6
 --- !u!4 &70724119 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4024533478750098, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
@@ -499,6 +509,10 @@ PrefabInstance:
     - target: {fileID: 1418375445147742, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
       propertyPath: m_Name
       value: Monster_8_Slime (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418375445147742, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4024533478750098, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
       propertyPath: m_RootOrder
@@ -568,6 +582,10 @@ PrefabInstance:
     - target: {fileID: 1418375445147742, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
       propertyPath: m_Name
       value: Monster_8_Slime (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418375445147742, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4024533478750098, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
       propertyPath: m_RootOrder
@@ -721,6 +739,9 @@ MonoBehaviour:
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
+  wayPoint: {fileID: 1422063936}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 0
 --- !u!61 &453565165
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -762,7 +783,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -835,6 +856,10 @@ PrefabInstance:
     - target: {fileID: 1418375445147742, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
       propertyPath: m_Name
       value: Monster_8_Slime (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418375445147742, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4024533478750098, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
       propertyPath: m_RootOrder
@@ -921,6 +946,9 @@ MonoBehaviour:
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
+  wayPoint: {fileID: 1422063936}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 6
 --- !u!61 &622853687
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -962,7 +990,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1295,6 +1323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster_8_Slime (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1418375445147742, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4024533478750098, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1469,6 +1501,82 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &958715184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1573038753135988, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+  m_PrefabInstance: {fileID: 2110942942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &958715185 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4121985675320168, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+  m_PrefabInstance: {fileID: 2110942942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &958715186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958715184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0bad4e09365dc4fbf41b11daf7aed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 25
+  shootTimer: 5
+  speed: 5
+  moveTimer: 3
+  wayPoint: {fileID: 1422063936}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 6
+--- !u!61 &958715187
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958715184}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.26616275, y: 0.9434581}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.6553466, y: 1.9313437}
+  m_EdgeRadius: 0
+--- !u!50 &958715188
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958715184}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 3
 --- !u!114 &959559424 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 959559424, guid: 19b5974f7def7cb40a9d763cb6cb2739, type: 3}
@@ -1490,6 +1598,10 @@ PrefabInstance:
     - target: {fileID: 1418375445147742, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
       propertyPath: m_Name
       value: Monster_8_Slime (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418375445147742, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4024533478750098, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
       propertyPath: m_RootOrder
@@ -1673,6 +1785,9 @@ MonoBehaviour:
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
+  wayPoint: {fileID: 1422063936}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 6
 --- !u!61 &1037772650
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1714,7 +1829,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1894,6 +2009,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster_8_Slime (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1418375445147742, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4024533478750098, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2067,6 +2186,9 @@ MonoBehaviour:
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
+  wayPoint: {fileID: 1422063936}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 6
 --- !u!61 &1311977904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2108,7 +2230,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2141,6 +2263,9 @@ MonoBehaviour:
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
+  wayPoint: {fileID: 1422063936}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 6
 --- !u!61 &1332392211
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2182,7 +2307,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2198,6 +2323,10 @@ PrefabInstance:
     - target: {fileID: 1418375445147742, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
       propertyPath: m_Name
       value: Monster_8_Slime (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418375445147742, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4024533478750098, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
       propertyPath: m_RootOrder
@@ -5391,6 +5520,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390790371}
   m_CullTransparentMesh: 1
+--- !u!1 &1422063936 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2852464271484641140, guid: 1bfc2f8199197a446aea0546610b084e, type: 3}
+  m_PrefabInstance: {fileID: 2852464272046238830}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1462554403
 GameObject:
   m_ObjectHideFlags: 0
@@ -5624,6 +5758,9 @@ MonoBehaviour:
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
+  wayPoint: {fileID: 1422063936}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 6
 --- !u!61 &1512647306
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5665,7 +5802,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5752,7 +5889,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3777864959710262804, guid: 1bfc2f8199197a446aea0546610b084e, type: 3}
   m_PrefabInstance: {fileID: 2852464272046238830}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1422063936}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41af93b40f949a84796f891eaa0d472e, type: 3}
@@ -5785,6 +5922,9 @@ MonoBehaviour:
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
+  wayPoint: {fileID: 1422063936}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 6
 --- !u!61 &1572586648
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5826,7 +5966,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5899,6 +6039,10 @@ PrefabInstance:
     - target: {fileID: 1418375445147742, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
       propertyPath: m_Name
       value: Monster_8_Slime (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418375445147742, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4024533478750098, guid: 1c102c09daeada64fbc7985a01dc548d, type: 3}
       propertyPath: m_RootOrder
@@ -16689,6 +16833,7 @@ Transform:
   - {fileID: 1512647304}
   - {fileID: 1332392209}
   - {fileID: 453565163}
+  - {fileID: 958715185}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16837,6 +16982,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &2110942942
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1859053210}
+    m_Modifications:
+    - target: {fileID: 1573038753135988, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+      propertyPath: m_Name
+      value: Monster_52_Cactus
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121985675320168, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121985675320168, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5781
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121985675320168, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.652
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121985675320168, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121985675320168, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121985675320168, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121985675320168, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121985675320168, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121985675320168, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121985675320168, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121985675320168, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121985675320168, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121985675320168, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 33031364836904268, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421626161281306, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
+      propertyPath: initialSkinName
+      value: V3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1181620bde801d84ca473f4afe26e9fc, type: 3}
 --- !u!1001 &2852464272046238830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17004,6 +17222,10 @@ PrefabInstance:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3777864959710262804, guid: 1bfc2f8199197a446aea0546610b084e, type: 3}
+      propertyPath: wayPoint
+      value: 
+      objectReference: {fileID: 1422063936}
     - target: {fileID: 3777864959710262804, guid: 1bfc2f8199197a446aea0546610b084e, type: 3}
       propertyPath: particleSystem
       value: 

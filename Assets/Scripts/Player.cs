@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public bool powerActive;
     public bool invincible;
     public float timeRemaining;
+    public ParticleSystem particleSystem;
 
     #region Variables
     public float speed = 2;

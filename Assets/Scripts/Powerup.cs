@@ -18,7 +18,6 @@ public class Powerup : MonoBehaviour
 
     public string powerupName;
 
-
     public void Start()
     {
         wimzard = FindObjectOfType<Player>();
@@ -56,6 +55,7 @@ public class Powerup : MonoBehaviour
             wimzard.shot.speed = 7;
             wimzard.shot.damage = 25;
             wimzard.shot.lifetime = 5;
+            wimzard.particleSystem.Play();
             wimzard.shot.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
             switch (powerupName)
             {

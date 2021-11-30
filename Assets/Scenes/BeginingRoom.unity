@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 25
   shootTimer: 5
+  prevShoottimer: 0
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
@@ -472,6 +473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 25
   shootTimer: 5
+  prevShoottimer: 0
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
@@ -736,6 +738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 25
   shootTimer: 5
+  prevShoottimer: 0
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
@@ -943,6 +946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 25
   shootTimer: 5
+  prevShoottimer: 0
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
@@ -1577,6 +1581,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
+--- !u!114 &958715192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958715184}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2466fc6c40ab4f046aa216e20a735aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 25
+  shootTimer: 5
+  prevShoottimer: 0
+  shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
+  speed: 2
+  moveTimer: 3
+  wayPoint: {fileID: 1422063936}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 0
 --- !u!114 &959559424 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 959559424, guid: 19b5974f7def7cb40a9d763cb6cb2739, type: 3}
@@ -1782,6 +1807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 25
   shootTimer: 5
+  prevShoottimer: 0
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
@@ -2183,6 +2209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 25
   shootTimer: 5
+  prevShoottimer: 0
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
@@ -2260,6 +2287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 25
   shootTimer: 5
+  prevShoottimer: 0
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
@@ -5755,6 +5783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 25
   shootTimer: 5
+  prevShoottimer: 0
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
@@ -5919,6 +5948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 25
   shootTimer: 5
+  prevShoottimer: 0
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3

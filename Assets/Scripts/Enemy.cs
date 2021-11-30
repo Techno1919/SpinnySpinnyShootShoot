@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float maxHP = 25;
-    public float shootTimer = 5;
+    public float maxHP;
+    public float shootTimer;
+    public float prevShoottimer;
     public EnemyShot shot;
-    public float speed = 5;
-    public float moveTimer = 3;
+    public float speed;
+    public float moveTimer;
 
     //public 
 
@@ -23,6 +24,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+
         HP = maxHP;
     }
 
@@ -41,7 +43,7 @@ public class Enemy : MonoBehaviour
         if(shootTimer <= 0)
         {
             Instantiate(shot, transform.position + new Vector3(1, 0), Quaternion.identity);
-            shootTimer = 5;
+            shootTimer = prevShoottimer;
         }
 
         if(HP <= 0)

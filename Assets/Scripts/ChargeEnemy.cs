@@ -26,14 +26,7 @@ public class ChargeEnemy : MonoBehaviour
         HP = maxHP;
     }
 
-    IEnumerator ChargeAttack()
-    {
-        Debug.Log("Commence Charge");
-        wayPointPos = new Vector2(wayPoint.transform.position.x, wayPoint.transform.position.y);
-        transform.position = Vector2.MoveTowards(transform.position, wayPointPos, enemyspeed * Time.deltaTime);
-        yield return new WaitForSeconds(2f);
-        shootTimer = 5;
-    }
+
 
     void Update()
     {
@@ -42,8 +35,9 @@ public class ChargeEnemy : MonoBehaviour
         {
             if (shootTimer <= 0)
             {
+                Debug.Log("Timer less than zero");
                 //Instantiate(shot, transform.position + new Vector3(1, 0), Quaternion.identity);
-                ChargeAttack();
+                StartCoroutine(ChargeAttack());
             }
             //Here, the zombie's will follow the waypoint.
         }
@@ -77,6 +71,15 @@ public class ChargeEnemy : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    IEnumerator ChargeAttack()
+    {
+        Debug.Log("Commence Charge");
+        wayPointPos = new Vector2(wayPoint.transform.position.x, wayPoint.transform.position.y);
+        transform.position = Vector2.MoveTowards(transform.position, wayPointPos, enemyspeed * Time.deltaTime);
+        yield return new WaitForSeconds(2f);
+        shootTimer = 5;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

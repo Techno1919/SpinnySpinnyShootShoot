@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     public float speed;
     public float moveTimer;
 
+    public Vector2 targetTransform;
+
     //public 
 
     float HP;
@@ -40,11 +42,20 @@ public class Enemy : MonoBehaviour
 
         shootTimer -= Time.deltaTime;
 
+
         if(shootTimer <= 0)
         {
-            Instantiate(shot, transform.position + new Vector3(1, 0), Quaternion.identity);
+            targetTransform = wayPoint.transform.position;
+            
+            if(shot != null)
+            {
+                Instantiate(shot, transform.position, Quaternion.identity);
+            }
+            
+           
             shootTimer = prevShoottimer;
         }
+
 
         if(HP <= 0)
         {

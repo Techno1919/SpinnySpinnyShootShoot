@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 981361820113886004}
   - component: {fileID: 981361820113886006}
   m_Layer: 0
-  m_Name: Monster_8_Slime
+  m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

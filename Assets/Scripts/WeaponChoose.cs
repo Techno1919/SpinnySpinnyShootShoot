@@ -17,7 +17,7 @@ public class WeaponChoose : MonoBehaviour
         switch (EventSystem.current.currentSelectedGameObject.name)
         {
             case "SwordButton":
-                GameObject weapon = Instantiate(sword);
+                GameObject weapon = Instantiate(Game.Instance.sword.gameObject);
                 weapon.transform.SetParent(Game.Instance.player.transform);
                 Game.Instance.player.weapon = weapon.GetComponent<Weapon>();
                 weapon.transform.localPosition = new Vector3(-0.135f, -0.822f, 0);
@@ -26,7 +26,7 @@ public class WeaponChoose : MonoBehaviour
                 Game.Instance.startGame = true;
                 break;
             case "StaffButton":
-                weapon = Instantiate(staff);
+                weapon = Instantiate(Game.Instance.staff.gameObject);
                 weapon.transform.SetParent(Game.Instance.player.transform);
                 Game.Instance.player.weapon = weapon.GetComponent<Weapon>();
                 weapon.transform.localPosition = new Vector3(0.1f, -0.18f, 0);
@@ -35,7 +35,7 @@ public class WeaponChoose : MonoBehaviour
                 Game.Instance.startGame = true;
                 break;
             case "PistolButton":
-                weapon = Instantiate(pistol);
+                weapon = Instantiate(Game.Instance.pistol.gameObject);
                 weapon.transform.SetParent(Game.Instance.player.transform);
                 Game.Instance.player.weapon = weapon.GetComponent<Weapon>();
                 weapon.transform.localPosition = new Vector3(0.05f, -0.38f, 0);
@@ -44,7 +44,7 @@ public class WeaponChoose : MonoBehaviour
                 Game.Instance.startGame = true;
                 break;
             case "ShotgunButton":
-                weapon = Instantiate(shotgun);
+                weapon = Instantiate(Game.Instance.shotgun.gameObject);
                 weapon.transform.SetParent(Game.Instance.player.transform);
                 Game.Instance.player.weapon = weapon.GetComponent<Weapon>();
                 weapon.transform.localPosition = new Vector3(0.03f, -0.7f, 0);

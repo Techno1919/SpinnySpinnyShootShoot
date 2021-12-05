@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2617436898586540514}
   - component: {fileID: -6825501387443402}
   - component: {fileID: 6214781013816762234}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyShot
   m_TagString: EnemyShot
   m_Icon: {fileID: 0}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   lifetime: 10
+  targetPos: {x: 0, y: 0}
   transforms: []
 --- !u!61 &-6825501387443402
 BoxCollider2D:

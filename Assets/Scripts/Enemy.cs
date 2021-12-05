@@ -13,8 +13,6 @@ public class Enemy : MonoBehaviour
 
     public Vector2 targetTransform;
 
-    //public 
-
     float HP;
 
     //You may consider adding a rigid body to the zombie for accurate physics simulation

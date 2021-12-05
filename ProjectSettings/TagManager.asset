@@ -8,6 +8,9 @@ TagManager:
   - EnemyShot
   - Shot
   - Weapon
+  - Coin
+  - FullHeartPickup
+  - HalfHeartPickup
   layers:
   - Default
   - TransparentFX

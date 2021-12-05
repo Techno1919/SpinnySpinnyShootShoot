@@ -183,6 +183,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 25
   shootTimer: 5
+  prevShoottimer: 0
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
+  targetTransform: {x: 0, y: 0}
+  wayPoint: {fileID: 0}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 6
+  meshRenderer: {fileID: 2348812083483520280}

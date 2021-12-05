@@ -142,3 +142,4 @@ MonoBehaviour:
   wayPoint: {fileID: 0}
   wayPointPos: {x: 0, y: 0}
   enemyspeed: 3
+  meshRenderer: {fileID: 1851799615113855444}

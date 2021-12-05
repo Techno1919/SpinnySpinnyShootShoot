@@ -23,14 +23,23 @@ public class ChargeEnemy : MonoBehaviour
     SkeletonAnimation sa;
 
     Vector2 targetPos;
+    public MeshRenderer meshRenderer;
+    //public Material ogTex;
+    //public Material flashTex;
+    //public Renderer ren;
+    //public Material[] mat;
 
-    
 
 
     void Start()
     {
         HP = maxHP;
         sa = GetComponent<SkeletonAnimation>();
+        //meshRenderer = GetComponent<Material>();
+        //meshRenderer.materials[0] = flashTex;
+        //ren = GetComponent<Renderer>();
+        //mat = ren.materials;
+        //mat[0] = flashTex   ;
     }
 
 
@@ -114,6 +123,7 @@ public class ChargeEnemy : MonoBehaviour
         Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag == "Shot")
         {
+            StartCoroutine(FlashEffect());
             HP -= Player.Instance.weapon.damage;
         }
     }
@@ -121,6 +131,8 @@ public class ChargeEnemy : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.name);
+        //StartCoroutine(FlashEffect());
+
         if (collision.gameObject.tag == "Shot")
         {
             HP -= Player.Instance.weapon.damage;
@@ -131,6 +143,8 @@ public class ChargeEnemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Shot")
         {
+           // StartCoroutine(FlashEffect());
+
             HP -= Player.Instance.weapon.damage;
         }
     }
@@ -139,6 +153,8 @@ public class ChargeEnemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Shot")
         {
+            StartCoroutine(FlashEffect());
+
             HP -= Player.Instance.weapon.damage;
         }
     }
@@ -146,5 +162,49 @@ public class ChargeEnemy : MonoBehaviour
     public void FindPostion()
     {
         targetPos = FindObjectOfType<Player>().transform.position;
+    }
+
+    IEnumerator FlashEffect()
+    {
+        meshRenderer.enabled = false;
+
+        yield return new WaitForSeconds(.05f);
+
+        meshRenderer.enabled = true;
+
+        yield return new WaitForSeconds(.05f);
+
+        meshRenderer.enabled = false;
+
+        yield return new WaitForSeconds(.05f);
+
+        meshRenderer.enabled = true;
+
+        yield return new WaitForSeconds(.05f);
+
+        meshRenderer.enabled = true;
+
+        yield return new WaitForSeconds(.05f);
+
+        meshRenderer.enabled = false;
+
+        yield return new WaitForSeconds(.05f);
+
+        meshRenderer.enabled = true;
+
+        yield return new WaitForSeconds(.05f);
+
+
+        meshRenderer.enabled = true;
+
+        yield return new WaitForSeconds(.05f);
+
+        meshRenderer.enabled = false;
+
+        yield return new WaitForSeconds(.05f);
+
+        meshRenderer.enabled = true;
+
+        yield return new WaitForSeconds(.05f);
     }
 }

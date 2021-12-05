@@ -8,9 +8,9 @@ public class Weapon : MonoBehaviour
     public GameObject shootPoint2;
     public GameObject shootPoint3;
     public WeaponType weaponType;
-    public bool rotateAttack = false;
+    public bool rotateAttack;
     public Quaternion originalRotation;
-    public int damage = 200;
+    public int damage;
 
     private void Start()
     {
@@ -43,6 +43,7 @@ public class Weapon : MonoBehaviour
 
 public enum WeaponType
 { 
+    None,
     Staff,
     Shotgun,
     Pistol,

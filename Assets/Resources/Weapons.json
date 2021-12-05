@@ -1,0 +1,22 @@
+[
+  {
+    "weaponType": "Staff",
+    "rotateAttack": false,
+    "damage": 25
+  },
+  {
+    "weaponType": "Sword",
+    "rotateAttack": false,
+    "damage": 50
+  },
+  {
+    "weaponType": "Pistol",
+    "rotateAttack": false,
+    "damage": 75
+  },
+  {
+    "weaponType": "Shotgun",
+    "rotateAttack": false,
+    "damage": 30
+  }
+]

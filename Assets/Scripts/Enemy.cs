@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine.Unity;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,8 +14,6 @@ public class Enemy : MonoBehaviour
 
     public Vector2 targetTransform;
 
-    //public 
-
     float HP;
 
     //You may consider adding a rigid body to the zombie for accurate physics simulation
@@ -23,11 +22,16 @@ public class Enemy : MonoBehaviour
     //This will be the zombie's speed. Adjust as necessary.
     public float enemyspeed = 6.0f;
 
+    public MeshRenderer meshRenderer;
+    SkeletonAnimation sa;
+
 
     void Start()
     {
 
         HP = maxHP;
+        sa = GetComponent<SkeletonAnimation>();
+        meshRenderer = GetComponent<MeshRenderer>();
     }
 
     void Update()
@@ -59,28 +63,8 @@ public class Enemy : MonoBehaviour
 
         if(HP <= 0)
         {
-            System.Random rnd = new System.Random();
-            int itemDropRate = rnd.Next(0, 50);
-            if(itemDropRate > 25 && itemDropRate <= 35)
-            {
-                Powerup powerup = Instantiate(Game.Instance.biggerBullet);
-                powerup.wimzard = Game.Instance.player;
-                powerup.transform.localPosition = transform.localPosition;
-            }
-            else if(itemDropRate > 35 && itemDropRate <= 45)
-            {
-                Powerup powerup = Instantiate(Game.Instance.fastFire);
-                powerup.wimzard = Game.Instance.player;
-                powerup.transform.localPosition = transform.localPosition;
-            }
-            else if(itemDropRate > 45 && itemDropRate <= 50)
-            {
-                Powerup powerup = Instantiate(Game.Instance.marioStarRipoff);
-                powerup.wimzard = Game.Instance.player;
-                powerup.transform.localPosition = transform.localPosition;
-            }
-            Game.Instance.score += 10;
-            Destroy(gameObject);
+            
+            StartCoroutine(EnemyDies());
         }
 
     }
@@ -90,6 +74,9 @@ public class Enemy : MonoBehaviour
         Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag == "Shot")
         {
+
+            StartCoroutine(FlashEffect());
+
             HP -= Player.Instance.weapon.damage;
         }
     }
@@ -99,6 +86,8 @@ public class Enemy : MonoBehaviour
         Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag == "Shot")
         {
+            StartCoroutine(FlashEffect());
+
             HP -= Player.Instance.weapon.damage;
         }
     }
@@ -107,17 +96,95 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Shot")
         {
+            StartCoroutine(FlashEffect());
             HP -= Player.Instance.weapon.damage;
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+
         if (collision.gameObject.tag == "Shot")
         {
+            StartCoroutine(FlashEffect());
             HP -= Player.Instance.weapon.damage;
         }
     }
 
+
+    IEnumerator EnemyDies()
+    {
+        speed = 0;
+        enemyspeed = 0;
+        sa.AnimationName = "Dead";
+        yield return new WaitForSeconds(1.2f);
+        System.Random rnd = new System.Random();
+        int itemDropRate = rnd.Next(0, 50);
+        if (itemDropRate > 25 && itemDropRate <= 35)
+        {
+            Powerup powerup = Instantiate(Game.Instance.biggerBullet);
+            powerup.wimzard = Game.Instance.player;
+            powerup.transform.localPosition = transform.localPosition;
+        }
+        else if (itemDropRate > 35 && itemDropRate <= 45)
+        {
+            Powerup powerup = Instantiate(Game.Instance.fastFire);
+            powerup.wimzard = Game.Instance.player;
+            powerup.transform.localPosition = transform.localPosition;
+        }
+        else if (itemDropRate > 45 && itemDropRate <= 50)
+        {
+            Powerup powerup = Instantiate(Game.Instance.marioStarRipoff);
+            powerup.wimzard = Game.Instance.player;
+            powerup.transform.localPosition = transform.localPosition;
+        }
+        Game.Instance.score += 10;
+
+        Destroy(gameObject);
+    }
+
+    IEnumerator FlashEffect()
+    {
+        meshRenderer.enabled = false;
+
+        yield return new WaitForSeconds(.05f);
+
+        meshRenderer.enabled = true;
+
+        yield return new WaitForSeconds(.05f);
+
+        meshRenderer.enabled = false;
+
+        yield return new WaitForSeconds(.05f);
+
+        meshRenderer.enabled = true;
+
+        yield return new WaitForSeconds(.05f);
+
+        meshRenderer.enabled = true;
+
+        yield return new WaitForSeconds(.05f);
+
+        meshRenderer.enabled = false;
+
+        yield return new WaitForSeconds(.05f);
+
+        meshRenderer.enabled = true;
+
+        yield return new WaitForSeconds(.05f);
+
+
+        meshRenderer.enabled = true;
+
+        yield return new WaitForSeconds(.05f);
+
+        meshRenderer.enabled = false;
+
+        yield return new WaitForSeconds(.05f);
+
+        meshRenderer.enabled = true;
+
+        yield return new WaitForSeconds(.05f);
+    }
 
 }

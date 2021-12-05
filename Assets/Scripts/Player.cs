@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+//<<<<<<< Updated upstream
     public bool powerActive;
     public bool invincible;
     public float timeRemaining;
@@ -15,6 +16,8 @@ public class Player : MonoBehaviour
     public GameObject wayPoint;
     //This is how often your waypoint's position will update to the player's position
     private float followtimer = 0.5f;
+//=======
+//>>>>>>> Stashed changes
 
     #region Variables
     public float speed = 2;
@@ -26,6 +29,12 @@ public class Player : MonoBehaviour
     public bool halfHeartLeft = false;
     public Sprite halfHeart;
     public Sprite emptyHeart;
+    public Sprite FullHeart;
+    public Chest nearChest;
+
+    public HealthPickup fullHeartPickup;
+    public HealthPickup halfHeartPickup;
+    public GameObject coin;
 
     static Player instance;
     static public Player Instance
@@ -67,7 +76,7 @@ public class Player : MonoBehaviour
 
         transform.Translate(input * speed * Time.deltaTime);
 
-        if(health[health.Length-1].sprite == emptyHeart)
+        if (health[health.Length - 1].sprite == emptyHeart)
         {
             Game.Instance.gameOver = true;
         }
@@ -76,6 +85,7 @@ public class Player : MonoBehaviour
         //input = gamepad.leftStick.ReadValue();
         if (shotTimer <= .5f) shotTimer -= Time.deltaTime;
         if (gamepad.buttonSouth.wasPressedThisFrame) OnFire();
+        if (gamepad.buttonNorth.wasPressedThisFrame) ActionButton();
         if (gamepad.buttonEast.wasPressedThisFrame) SceneManager.LoadScene("Test");
 
     }
@@ -90,36 +100,54 @@ public class Player : MonoBehaviour
 
     public void OnFire()
     {
-       if(shotTimer <= 0)
-       {
-           shotTimer = .5f;
-           switch (weapon.weaponType)
-           {
-               case WeaponType.Staff:
-                   PlayerShot spawnedShot = Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
-                   spawnedShot.test = weapon.transform.up;
-                   break;
-               case WeaponType.Shotgun:
-                   spawnedShot = Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
-                   spawnedShot.test = weapon.transform.up;
-                   spawnedShot = Instantiate(shot, weapon.shootPoint2.transform.position, Quaternion.identity);
-                   spawnedShot.test = weapon.transform.up;
-                   spawnedShot = Instantiate(shot, weapon.shootPoint3.transform.position, Quaternion.identity);
-                   spawnedShot.test = weapon.transform.up;
-                   break;
-               case WeaponType.Pistol:
-                   spawnedShot = Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
-                   spawnedShot.test = weapon.transform.up;
-                   break;
-               case WeaponType.Sword:
+        if (shotTimer <= 0)
+        {
+            shotTimer = .5f;
+            switch (weapon.weaponType)
+            {
+                case WeaponType.Staff:
+                    PlayerShot spawnedShot = Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
+                    spawnedShot.test = weapon.transform.up;
+                    break;
+                case WeaponType.Shotgun:
+                    spawnedShot = Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
+                    spawnedShot.test = weapon.transform.up;
+                    spawnedShot = Instantiate(shot, weapon.shootPoint2.transform.position, Quaternion.identity);
+                    spawnedShot.test = weapon.transform.up;
+                    spawnedShot = Instantiate(shot, weapon.shootPoint3.transform.position, Quaternion.identity);
+                    spawnedShot.test = weapon.transform.up;
+                    break;
+                case WeaponType.Pistol:
+                    spawnedShot = Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
+                    spawnedShot.test = weapon.transform.up;
+                    break;
+                case WeaponType.Sword:
                     weapon.rotateAttack = true;
                     weapon.tag = "Shot";
-                   break;
-               default:
-                   break;
-           }
-           
-       }
+                    break;
+                default:
+                    break;
+            }
+
+        }
+    }
+
+    public void ActionButton()
+    {
+        nearChest.spriteRenderer.sprite = nearChest.openedSprite;
+        int rand = Random.Range(0, 100);
+        if (rand <= 50)
+        {
+            Instantiate(coin, nearChest.spawnPoint);
+        }
+        else if (rand >= 51 || rand <= 85)
+        {
+            Instantiate(halfHeartPickup, nearChest.spawnPoint);
+        }
+        else if (rand >= 86 || rand <= 100)
+        {
+            Instantiate(fullHeartPickup, nearChest.spawnPoint);
+        }
     }
 
     public void OnMove(InputValue inputValue)
@@ -148,9 +176,9 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "EnemyShot")
+        if (collision.gameObject.tag == "EnemyShot")
         {
-            if(!invincible)
+            if (!invincible)
             {
                 if (halfHeartLeft)
                 {
@@ -165,6 +193,16 @@ public class Player : MonoBehaviour
                 }
             }
 
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Coin")
+        {
+            Game.Instance.score += 100;
+            Destroy(collision.gameObject);
         }
     }
 }

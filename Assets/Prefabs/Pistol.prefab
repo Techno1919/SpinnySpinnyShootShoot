@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4141094002367507173}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.17, z: 0}
+  m_LocalPosition: {x: -2.5, y: 8.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4141094002696822642}
@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 4141094002696822643}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0}
   m_Children:
   - {fileID: 4141094002367507172}
   - {fileID: 4141094003427120154}
@@ -131,10 +131,10 @@ MonoBehaviour:
   shootPoint: {fileID: 4141094002367507173}
   shootPoint2: {fileID: 4141094003427120155}
   shootPoint3: {fileID: 4141094003297342983}
-  weaponType: 0
+  weaponType: 3
   rotateAttack: 0
   originalRotation: {x: 0, y: 0, z: 0, w: 0}
-  damage: 0
+  damage: 75
 --- !u!1 &4141094003297342983
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4141094003297342983}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.37, y: 1.17, z: 0}
+  m_LocalPosition: {x: -2.5, y: 8.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4141094002696822642}
@@ -189,7 +189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4141094003427120155}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.23, y: 1.17, z: 0}
+  m_LocalPosition: {x: -2.5, y: 8.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4141094002696822642}

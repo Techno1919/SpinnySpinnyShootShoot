@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public bool invincible;
     public float timeRemaining;
     public ParticleSystem particleSystem;
+    
 
     public GameObject wayPoint;
     //This is how often your waypoint's position will update to the player's position
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
     public float speed = 2;
     public PlayerShot shot;
     public Weapon weapon;
+    public Weapon weapon2;
     public float shotTimer = 0;
     public Image[] health;
     public int index = 0;
@@ -31,6 +33,7 @@ public class Player : MonoBehaviour
     public Sprite emptyHeart;
     public Sprite FullHeart;
     public Chest nearChest;
+    public bool firstWeaponActive = true;
 
     public HealthPickup fullHeartPickup;
     public HealthPickup halfHeartPickup;
@@ -86,11 +89,24 @@ public class Player : MonoBehaviour
         if (shotTimer <= .5f) shotTimer -= Time.deltaTime;
         if (gamepad.buttonSouth.wasPressedThisFrame) OnFire();
         if (gamepad.buttonNorth.wasPressedThisFrame) ActionButton();
-        if (gamepad.buttonEast.wasPressedThisFrame) SceneManager.LoadScene("Test");
 
     }
 
-
+    public void SwapWeapons()
+    {
+        if(firstWeaponActive)
+        {
+            weapon.gameObject.SetActive(false);
+            weapon2.gameObject.SetActive(true);
+            firstWeaponActive = false;
+        }
+        else
+        {
+            weapon.gameObject.SetActive(true);
+            weapon2.gameObject.SetActive(false);
+            firstWeaponActive = true;
+        }
+    }
 
     void UpdatePosition()
     {
@@ -103,31 +119,40 @@ public class Player : MonoBehaviour
         if (shotTimer <= 0)
         {
             shotTimer = .5f;
-            switch (weapon.weaponType)
+            if(firstWeaponActive)
             {
-                case WeaponType.Staff:
-                    PlayerShot spawnedShot = Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
-                    spawnedShot.test = weapon.transform.up;
-                    break;
-                case WeaponType.Shotgun:
-                    spawnedShot = Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
-                    spawnedShot.test = weapon.transform.up;
-                    spawnedShot = Instantiate(shot, weapon.shootPoint2.transform.position, Quaternion.identity);
-                    spawnedShot.test = weapon.transform.up;
-                    spawnedShot = Instantiate(shot, weapon.shootPoint3.transform.position, Quaternion.identity);
-                    spawnedShot.test = weapon.transform.up;
-                    break;
-                case WeaponType.Pistol:
-                    spawnedShot = Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
-                    spawnedShot.test = weapon.transform.up;
-                    break;
-                case WeaponType.Sword:
-                    weapon.rotateAttack = true;
-                    weapon.tag = "Shot";
-                    break;
-                default:
-                    break;
+                switch (weapon.weaponType)
+                {
+                    case WeaponType.Staff:
+                        PlayerShot spawnedShot = Instantiate(shot, weapon.shootPoint.transform.position, Quaternion.identity);
+                        spawnedShot.test = weapon.transform.up;
+                        break;
+                    case WeaponType.Sword:
+                        weapon.rotateAttack = true;
+                        weapon.tag = "Shot";
+                        break;
+                    default:
+                        break;
+                }
             }
+            else
+            {
+                switch (weapon2.weaponType)
+                {
+                    case WeaponType.Shotgun:
+                        PlayerShot spawnedShot = Instantiate(shot, weapon2.shootPoint.transform.position, Quaternion.identity);
+                        spawnedShot.test = weapon2.transform.up;
+                        spawnedShot = Instantiate(shot, weapon2.shootPoint2.transform.position, Quaternion.identity);
+                        spawnedShot.test = weapon2.transform.up;
+                        spawnedShot = Instantiate(shot, weapon2.shootPoint3.transform.position, Quaternion.identity);
+                        spawnedShot.test = weapon2.transform.up;
+                        break;
+                    case WeaponType.Pistol:
+                        spawnedShot = Instantiate(shot, weapon2.shootPoint.transform.position, Quaternion.identity);
+                        spawnedShot.test = weapon2.transform.up;
+                        break;
+                }
+            } 
 
         }
     }

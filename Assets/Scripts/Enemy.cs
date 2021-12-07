@@ -29,10 +29,10 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-
         HP = maxHP;
         sa = GetComponent<SkeletonAnimation>();
         meshRenderer = GetComponent<MeshRenderer>();
+        targetTransform = Game.Instance.player.transform.position;
     }
 
     void Update()
@@ -61,7 +61,8 @@ public class Enemy : MonoBehaviour
 
                 if (shot != null)
                 {
-                    Instantiate(shot, transform.position, Quaternion.identity);
+                    EnemyShot spawnedShot = Instantiate(shot, transform.position, Quaternion.identity);
+                    spawnedShot.transform.position = transform.position = Vector2.MoveTowards(transform.position, targetTransform * 100, speed * Time.deltaTime);
                 }
 
 

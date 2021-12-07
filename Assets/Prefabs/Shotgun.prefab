@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473954058771823490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.32, y: 1.46, z: 0}
+  m_LocalPosition: {x: -0.6, y: 15.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8603156209256434744}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5552875304616715780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.32, y: 6.6, z: 0}
+  m_LocalPosition: {x: -10.1, y: 14.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8603156209256434744}
@@ -84,7 +84,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5694520728936073537}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.32, y: -3.3, z: 0}
+  m_LocalPosition: {x: 8, y: 14.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8603156209256434744}
@@ -189,9 +189,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1970c9eb5ff6c49428de085228a96887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootPoint: {fileID: 0}
-  shootPoint2: {fileID: 0}
-  shootPoint3: {fileID: 0}
+  shootPoint: {fileID: 5552875304616715780}
+  shootPoint2: {fileID: 1473954058771823490}
+  shootPoint3: {fileID: 5694520728936073537}
   weaponType: 0
   rotateAttack: 0
   originalRotation: {x: 0, y: 0, z: 0, w: 0}

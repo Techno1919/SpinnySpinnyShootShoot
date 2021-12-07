@@ -12,6 +12,10 @@ public class Boss : MonoBehaviour
     public GameObject spike3;
     public GameObject SpikeProjectile;
     public GameObject EyeLazer;
+    public Transform point1;
+    public Transform point2;
+    public bool moveToPoint1 = true;
+    public bool moveToPoint2 = false;
     float timer = 3;
     SkeletonAnimation sa;
     float HP;
@@ -28,6 +32,15 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (moveToPoint1)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, point1.position, 2 * Time.deltaTime);
+        }
+        if (moveToPoint2)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, point2.position, 2 * Time.deltaTime);
+        }
+
         timer -= Time.deltaTime;
         if (timer < 0 && shotNum < 4)
         {
@@ -90,6 +103,16 @@ public class Boss : MonoBehaviour
         {
             HP -= 25;
             Destroy(collision.gameObject);
+        }
+        if (collision.tag == "Point1")
+        {
+            moveToPoint2 = true;
+            moveToPoint1 = false;
+        }
+        if (collision.tag == "Point2")
+        {
+            moveToPoint2 = false;
+            moveToPoint1 = true;
         }
     }
 

@@ -23,6 +23,10 @@ public class Game : MonoBehaviour
     public GameObject fireButton;
     public GameObject actionButton;
 
+    public GameObject gameChoose2;
+    public GameObject UIScreen;
+    public GameObject weaponChooseScreen;
+
     public Weapon sword;
     public Weapon staff;
     public Weapon shotgun;

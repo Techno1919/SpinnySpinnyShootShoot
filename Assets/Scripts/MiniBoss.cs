@@ -12,6 +12,11 @@ public class MiniBoss : MonoBehaviour
     public GameObject spike3;
     public GameObject SpikeProjectile;
     public GameObject EyeLazer;
+    public Transform point1;
+    public Transform point2;
+    public bool moveToPoint1 = true;
+    public bool moveToPoint2 = false;
+
     float timer = 3;
     SkeletonAnimation sa;
     float HP;
@@ -29,6 +34,15 @@ public class MiniBoss : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
+        if(moveToPoint1)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, point1.position, 2 * Time.deltaTime);
+        }
+        if(moveToPoint2)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, point2.position, 2 * Time.deltaTime);
+        }
+
         if (timer < 0 && shotNum < 4)
         {
             Debug.Log("fire!");
@@ -90,6 +104,16 @@ public class MiniBoss : MonoBehaviour
         {
             HP -= 25;
             Destroy(collision.gameObject);
+        }
+        if(collision.tag == "Point1")
+        {
+            moveToPoint2 = true;
+            moveToPoint1 = false;
+        }
+        if (collision.tag == "Point2")
+        {
+            moveToPoint2 = false;
+            moveToPoint1 = true;
         }
     }
 

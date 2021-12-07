@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 981361820113886007}
   - component: {fileID: 981361820113886004}
   - component: {fileID: 981361820113886006}
-  m_Layer: 0
+  - component: {fileID: 5547128941748909481}
+  m_Layer: 10
   m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,9 +184,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 25
   shootTimer: 0
+  prevShoottimer: 0
   shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
+  targetTransform: {x: 0, y: 0}
   wayPoint: {fileID: 0}
   wayPointPos: {x: 0, y: 0}
   enemyspeed: 3
+  meshRenderer: {fileID: 0}
+--- !u!58 &5547128941748909481
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980506405378468724}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.26616272, y: 0.9434581}
+  serializedVersion: 2
+  m_Radius: 8

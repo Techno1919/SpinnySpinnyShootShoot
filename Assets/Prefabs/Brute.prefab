@@ -1,5 +1,120 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &8763510467194954804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763416142326288671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2466fc6c40ab4f046aa216e20a735aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 25
+  shootTimer: 1.5
+  prevShoottimer: 1.5
+  shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
+  speed: 2
+  moveTimer: 3
+  targetTransform: {x: 0, y: 0}
+  wayPoint: {fileID: 0}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 0
+  meshRenderer: {fileID: 0}
+--- !u!114 &8763510467125545236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763416142611783831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2466fc6c40ab4f046aa216e20a735aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 25
+  shootTimer: 1.5
+  prevShoottimer: 1.5
+  shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
+  speed: 2
+  moveTimer: 3
+  targetTransform: {x: 0, y: 0}
+  wayPoint: {fileID: 0}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 0
+  meshRenderer: {fileID: 0}
+--- !u!114 &8763510466230615196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763416142770156499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2466fc6c40ab4f046aa216e20a735aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 25
+  shootTimer: 1.5
+  prevShoottimer: 1.5
+  shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
+  speed: 2
+  moveTimer: 3
+  targetTransform: {x: 0, y: 0}
+  wayPoint: {fileID: 0}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 0
+  meshRenderer: {fileID: 0}
+--- !u!114 &8763510467372456896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763416142885884359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2466fc6c40ab4f046aa216e20a735aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 25
+  shootTimer: 1.5
+  prevShoottimer: 1.5
+  shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
+  speed: 2
+  moveTimer: 3
+  targetTransform: {x: 0, y: 0}
+  wayPoint: {fileID: 0}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 0
+  meshRenderer: {fileID: 0}
+--- !u!114 &8763510467193406079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763416143227135820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2466fc6c40ab4f046aa216e20a735aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 25
+  shootTimer: 1.5
+  prevShoottimer: 1.5
+  shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
+  speed: 2
+  moveTimer: 3
+  targetTransform: {x: 0, y: 0}
+  wayPoint: {fileID: 0}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 0
+  meshRenderer: {fileID: 0}
 --- !u!1 &8763416144215258079
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,6 +130,7 @@ GameObject:
   - component: {fileID: 8763510466380949349}
   - component: {fileID: 8763510466380949350}
   - component: {fileID: 8763510466380949274}
+  - component: {fileID: 9045583092428800738}
   m_Layer: 10
   m_Name: Brute
   m_TagString: Untagged
@@ -192,152 +308,30 @@ MonoBehaviour:
   maxHP: 25
   shootTimer: 10
   prevShoottimer: 10
-  shot: {fileID: 0}
+  shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
   speed: 2
   moveTimer: 3
   targetTransform: {x: 0, y: 0}
   wayPoint: {fileID: 0}
   wayPointPos: {x: 0, y: 0}
   enemyspeed: 0.5
-  meshRenderer: {fileID: 0}
---- !u!114 &8763510466230615196
-MonoBehaviour:
+  meshRenderer: {fileID: 8776115664113827889}
+--- !u!58 &9045583092428800738
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8763416142770156499}
+  m_GameObject: {fileID: 8763416144215258079}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2466fc6c40ab4f046aa216e20a735aa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 25
-  shootTimer: 1.5
-  prevShoottimer: 1.5
-  shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
-  speed: 2
-  moveTimer: 3
-  targetTransform: {x: 0, y: 0}
-  wayPoint: {fileID: 0}
-  wayPointPos: {x: 0, y: 0}
-  enemyspeed: 0
-  meshRenderer: {fileID: 0}
---- !u!114 &8763510466442763895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8763416144318809469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2466fc6c40ab4f046aa216e20a735aa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 25
-  shootTimer: 1.5
-  prevShoottimer: 1.5
-  shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
-  speed: 2
-  moveTimer: 3
-  targetTransform: {x: 0, y: 0}
-  wayPoint: {fileID: 0}
-  wayPointPos: {x: 0, y: 0}
-  enemyspeed: 0
-  meshRenderer: {fileID: 0}
---- !u!114 &8763510467125545236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8763416142611783831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2466fc6c40ab4f046aa216e20a735aa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 25
-  shootTimer: 1.5
-  prevShoottimer: 1.5
-  shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
-  speed: 2
-  moveTimer: 3
-  targetTransform: {x: 0, y: 0}
-  wayPoint: {fileID: 0}
-  wayPointPos: {x: 0, y: 0}
-  enemyspeed: 0
-  meshRenderer: {fileID: 0}
---- !u!114 &8763510467193406079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8763416143227135820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2466fc6c40ab4f046aa216e20a735aa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 25
-  shootTimer: 1.5
-  prevShoottimer: 1.5
-  shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
-  speed: 2
-  moveTimer: 3
-  targetTransform: {x: 0, y: 0}
-  wayPoint: {fileID: 0}
-  wayPointPos: {x: 0, y: 0}
-  enemyspeed: 0
-  meshRenderer: {fileID: 0}
---- !u!114 &8763510467194954804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8763416142326288671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2466fc6c40ab4f046aa216e20a735aa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 25
-  shootTimer: 1.5
-  prevShoottimer: 1.5
-  shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
-  speed: 2
-  moveTimer: 3
-  targetTransform: {x: 0, y: 0}
-  wayPoint: {fileID: 0}
-  wayPointPos: {x: 0, y: 0}
-  enemyspeed: 0
-  meshRenderer: {fileID: 0}
---- !u!114 &8763510467372456896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8763416142885884359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2466fc6c40ab4f046aa216e20a735aa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 25
-  shootTimer: 1.5
-  prevShoottimer: 1.5
-  shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
-  speed: 2
-  moveTimer: 3
-  targetTransform: {x: 0, y: 0}
-  wayPoint: {fileID: 0}
-  wayPointPos: {x: 0, y: 0}
-  enemyspeed: 0
-  meshRenderer: {fileID: 0}
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.07991576, y: 1.4257588}
+  serializedVersion: 2
+  m_Radius: 6
 --- !u!114 &8763510467821664313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +362,29 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8763416144254981512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2466fc6c40ab4f046aa216e20a735aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 25
+  shootTimer: 1.5
+  prevShoottimer: 1.5
+  shot: {fileID: 2617436898586540514, guid: 9063ab98b580aa84699d0c227f76496b, type: 3}
+  speed: 2
+  moveTimer: 3
+  targetTransform: {x: 0, y: 0}
+  wayPoint: {fileID: 0}
+  wayPointPos: {x: 0, y: 0}
+  enemyspeed: 0
+  meshRenderer: {fileID: 0}
+--- !u!114 &8763510466442763895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763416144318809469}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2466fc6c40ab4f046aa216e20a735aa1, type: 3}
@@ -671,14 +688,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 596b0351b4292a74c80ee828d83947ae, type: 3}
---- !u!4 &8759849996904556647 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4225971466403636, guid: 596b0351b4292a74c80ee828d83947ae, type: 3}
-  m_PrefabInstance: {fileID: 8763510467204618067}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8763416144318809469 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1080664274096686, guid: 596b0351b4292a74c80ee828d83947ae, type: 3}
+  m_PrefabInstance: {fileID: 8763510467204618067}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8759849996904556647 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4225971466403636, guid: 596b0351b4292a74c80ee828d83947ae, type: 3}
   m_PrefabInstance: {fileID: 8763510467204618067}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8763510467292660529
@@ -770,14 +787,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 596b0351b4292a74c80ee828d83947ae, type: 3}
---- !u!4 &8759849998334589957 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4225971466403636, guid: 596b0351b4292a74c80ee828d83947ae, type: 3}
-  m_PrefabInstance: {fileID: 8763510467292660529}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8763416142326288671 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1080664274096686, guid: 596b0351b4292a74c80ee828d83947ae, type: 3}
+  m_PrefabInstance: {fileID: 8763510467292660529}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8759849998334589957 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4225971466403636, guid: 596b0351b4292a74c80ee828d83947ae, type: 3}
   m_PrefabInstance: {fileID: 8763510467292660529}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8763510467577606841

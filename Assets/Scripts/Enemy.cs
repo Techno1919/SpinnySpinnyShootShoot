@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public EnemyShot shot;
     public float speed;
     public float moveTimer;
+    public bool chasePlayer;
 
     public Vector2 targetTransform;
 
@@ -40,26 +41,31 @@ public class Enemy : MonoBehaviour
         {
             wayPointPos = new Vector2(wayPoint.transform.position.x, wayPoint.transform.position.y);
             //Here, the zombie's will follow the waypoint.
-            transform.position = Vector2.MoveTowards(transform.position, wayPointPos, enemyspeed * Time.deltaTime);
-        }
-
-
-        shootTimer -= Time.deltaTime;
-
-
-        if(shootTimer <= 0)
-        {
-            targetTransform = wayPoint.transform.position;
-            
-            if(shot != null)
+            if(chasePlayer)
             {
-                Instantiate(shot, transform.position, Quaternion.identity);
+                transform.position = Vector2.MoveTowards(transform.position, wayPointPos, enemyspeed * Time.deltaTime);
             }
-            
-           
-            shootTimer = prevShoottimer;
+
         }
 
+        if(chasePlayer)
+        {
+            shootTimer -= Time.deltaTime;
+
+
+            if (shootTimer <= 0)
+            {
+                targetTransform = wayPoint.transform.position;
+
+                if (shot != null)
+                {
+                    Instantiate(shot, transform.position, Quaternion.identity);
+                }
+
+
+                shootTimer = prevShoottimer;
+            }
+        }
 
         if(HP <= 0)
         {
@@ -94,23 +100,19 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Shot")
+        if (collision.gameObject.tag == "Player")
         {
-            StartCoroutine(FlashEffect());
-            HP -= Player.Instance.weapon.damage;
+            chasePlayer = true;
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-
-        if (collision.gameObject.tag == "Shot")
+        if (collision.gameObject.tag == "Player")
         {
-            StartCoroutine(FlashEffect());
-            HP -= Player.Instance.weapon.damage;
+            chasePlayer = false;
         }
     }
-
 
     IEnumerator EnemyDies()
     {
@@ -186,5 +188,4 @@ public class Enemy : MonoBehaviour
 
         yield return new WaitForSeconds(.05f);
     }
-
 }

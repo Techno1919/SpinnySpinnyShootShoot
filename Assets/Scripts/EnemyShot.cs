@@ -23,7 +23,7 @@ public class EnemyShot : MonoBehaviour
 
     private void Update()
     {
-
+        
         MoveToPlayer(targetPos);
 
         lifetime -= Time.deltaTime;

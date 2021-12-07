@@ -10,7 +10,7 @@ public class ChargeEnemy : MonoBehaviour
     public EnemyShot shot;
     public float speed = 5;
     public float moveTimer = 3;
-
+    public bool chasePlayer;
     //public 
 
     float HP;
@@ -46,17 +46,21 @@ public class ChargeEnemy : MonoBehaviour
 
     void Update()
     {
-        shootTimer -= Time.deltaTime;
-        if (Time.timeScale != 0)
+        if(chasePlayer)
         {
-            if (shootTimer <= 0)
+            shootTimer -= Time.deltaTime;
+            if (Time.timeScale != 0)
             {
-                Debug.Log("Timer less than zero");
-                //Instantiate(shot, transform.position + new Vector3(1, 0), Quaternion.identity);
-                FindPostion();
-                StartCoroutine(ChargeAttack());
+                if (shootTimer <= 0)
+                {
+                    Debug.Log("Timer less than zero");
+                    //Instantiate(shot, transform.position + new Vector3(1, 0), Quaternion.identity);
+                    FindPostion();
+                    StartCoroutine(ChargeAttack());
+                }
             }
         }
+        
 
         if (HP <= 0)
         {
@@ -126,6 +130,7 @@ public class ChargeEnemy : MonoBehaviour
             StartCoroutine(FlashEffect());
             HP -= Player.Instance.weapon.damage;
         }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -141,21 +146,17 @@ public class ChargeEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Shot")
+        if (collision.gameObject.tag == "Player")
         {
-           // StartCoroutine(FlashEffect());
-
-            HP -= Player.Instance.weapon.damage;
+            chasePlayer = true;
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Shot")
+        if (collision.gameObject.tag == "Player")
         {
-            StartCoroutine(FlashEffect());
-
-            HP -= Player.Instance.weapon.damage;
+            chasePlayer = false;
         }
     }
 

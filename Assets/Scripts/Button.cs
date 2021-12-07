@@ -7,7 +7,7 @@ public class Button : MonoBehaviour
 {
     public void OnPlay()
     {
-        SceneManager.LoadScene("BeginingRoom");
+        SceneManager.LoadScene("FirstFloor");
     }
     //Hello
 

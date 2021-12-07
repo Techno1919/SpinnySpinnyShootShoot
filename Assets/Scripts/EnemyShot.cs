@@ -49,6 +49,7 @@ public class EnemyShot : MonoBehaviour
 
     public void FindPostion()
     {
+        Debug.Log("Position Found");
         targetPos = FindObjectOfType<Player>().transform.position;
     }
 }

@@ -56,6 +56,8 @@ public class Enemy : MonoBehaviour
             if (shootTimer <= 0)
             {
                 targetTransform = wayPoint.transform.position;
+                Debug.Log("Shoot Player");
+                Debug.Log(targetTransform);
 
                 if (shot != null)
                 {

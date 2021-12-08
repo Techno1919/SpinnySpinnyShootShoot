@@ -25,6 +25,7 @@ public class WeaponChoose : MonoBehaviour
                 weaponChooseScreen.SetActive(false);
                 Game.Instance.weaponChoose2.SetActive(false);
                 Game.Instance.startGame = true;
+                Player.Instance.firstWeaponActive = true;
                 break;
             case "StaffButton":
                 weapon = Instantiate(Game.Instance.staff.gameObject);
@@ -35,6 +36,7 @@ public class WeaponChoose : MonoBehaviour
                 weaponChooseScreen.SetActive(false);
                 Game.Instance.weaponChoose2.SetActive(false);
                 Game.Instance.startGame = true;
+                Player.Instance.firstWeaponActive = true;
                 break;
             case "PistolButton":
                 weapon = Instantiate(Game.Instance.pistol.gameObject);
@@ -47,6 +49,7 @@ public class WeaponChoose : MonoBehaviour
                 weaponChooseScreen.SetActive(false);
                 Game.Instance.weaponChoose2.SetActive(false);
                 Game.Instance.startGame = true;
+                Player.Instance.firstWeaponActive = false;
                 break;
             case "ShotgunButton":
                 weapon = Instantiate(Game.Instance.shotgun.gameObject);
@@ -58,6 +61,7 @@ public class WeaponChoose : MonoBehaviour
                 UIScreen.SetActive(true);
                 weaponChooseScreen.SetActive(false);
                 Game.Instance.weaponChoose2.SetActive(false);
+                Player.Instance.firstWeaponActive = false;
                 Game.Instance.startGame = true;
                 break;
         }

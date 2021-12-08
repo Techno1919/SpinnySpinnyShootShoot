@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 397815709638056293}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,10 +99,10 @@ MonoBehaviour:
   shootPoint: {fileID: 0}
   shootPoint2: {fileID: 0}
   shootPoint3: {fileID: 0}
-  weaponType: 0
+  weaponType: 4
   rotateAttack: 0
   originalRotation: {x: 0, y: 0, z: 0, w: 0}
-  damage: 0
+  damage: 50
 --- !u!61 &397815709638056293
 BoxCollider2D:
   m_ObjectHideFlags: 0

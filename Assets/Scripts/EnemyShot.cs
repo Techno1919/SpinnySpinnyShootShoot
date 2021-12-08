@@ -43,12 +43,14 @@ public class EnemyShot : MonoBehaviour
 
     public void MoveToPlayer(Vector2 playerPrevPosition)
     {
-        transform.position = Vector2.MoveTowards(transform.position, playerPrevPosition * 100, speed * Time.deltaTime);
+        Debug.Log(playerPrevPosition);
+        transform.position = Vector2.MoveTowards(transform.position, playerPrevPosition, speed * Time.deltaTime);
     }
 
     public void FindPostion()
     {
         Debug.Log("Position Found");
         targetPos = FindObjectOfType<Player>().transform.position;
+        //Debug.Log(targetPos);
     }
 }

@@ -178,13 +178,27 @@ public class Player : MonoBehaviour
     public void OnMove(InputValue inputValue)
     {
         input = inputValue.Get<Vector2>();
-        weapon.Rotate(input);
+        if(firstWeaponActive)
+        {
+            weapon.Rotate(input);
+        }
+        else
+        {
+            weapon2.Rotate(input);
+        }
     }
 
     public void OnMove(InputAction.CallbackContext contenxt)
     {
         input = contenxt.ReadValue<Vector2>();
-        weapon.Rotate(input);
+        if (firstWeaponActive)
+        {
+            weapon.Rotate(input);
+        }
+        else
+        {
+            weapon2.Rotate(input);
+        }
     }
 
     private void HandleAction(InputAction.CallbackContext context)
@@ -219,6 +233,29 @@ public class Player : MonoBehaviour
             }
 
         }
+
+        if (collision.gameObject.tag == "BossShot")
+        {
+            if (!invincible)
+            {
+                if (halfHeartLeft)
+                {
+                    health[index].sprite = emptyHeart;
+                    if(index <= health.Length)
+                    {
+                        health[index + 1].sprite = halfHeart;
+                    }
+                    halfHeartLeft = false;
+                    index++;
+                }
+                else
+                {
+                    health[index].sprite = emptyHeart;
+                    halfHeartLeft = true;
+                }
+            }
+        }
+
 
     }
 

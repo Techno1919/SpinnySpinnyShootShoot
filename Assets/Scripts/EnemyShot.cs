@@ -23,11 +23,10 @@ public class EnemyShot : MonoBehaviour
 
     private void Update()
     {
-        
         MoveToPlayer(targetPos);
 
         lifetime -= Time.deltaTime;
-        if(lifetime <0)
+        if(lifetime <= 0)
         {
             Destroy(gameObject);
         }

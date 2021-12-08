@@ -58,6 +58,10 @@ public class MiniBoss : MonoBehaviour
         if(HP <= 0)
         {
             Destroy(gameObject);
+            Time.timeScale = 0;
+            Game.Instance.weaponChooseScreen.SetActive(false);
+            Game.Instance.UIScreen.SetActive(false);
+            Game.Instance.weaponChoose2.SetActive(true);
         }
     }
 
